@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>Genki Dama - webapis javascript</title>
+    <meta name="description" content="Genki Dama - webapis javascript Utilizando WebSlides">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="../static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/svg-icons.css">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+    <style>
+      #ball {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: red;
+
+        background-image: -webkit-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+        background-image: -moz-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+        background-image: -ms-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+        background-image: radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+
+    <main role="main">
+      <article id="webslides">
+
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section class="bg-apple aligncenter">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1>Genki Dama - Web apis javascript</h1>
+            <h1><img src="../static/images/genkiDama/goku.png" alt="Goku"></h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h1>O que são APIs?</h1>
+            <p class="text-intro"><b>Application Programming Interfaces</b></p>
+            <p>São construções disponíveis nas linguagens de programação. Permite que desenvolvedores criem funcionalidades complexas mais facilmente.</p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h1>O que as APIs podem fazer?</h1>
+            <ul>
+              <li><strong>Manipular documento</strong> DOM(Document Object Model) <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents" target="_blank">+</a></li>
+              <li><strong>Buscar dados do servidor</strong> XMLHttpRequest <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data" target="_blank">+</a></li>
+              <li><strong>Desenhar e manipular gráficos</strong> Canvas e WebGL </li>
+              <li><strong>Manipular de Audio e Video</strong> HTMLMediaElement, AudioContext e WebRTC </li>
+              <li><strong>Client-side storage</strong> Storage e IndexedDB</li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h1>Exemplos de Apis</h1>
+            <ul>
+              <li><strong>Google Maps</strong> <a href="https://cloud.google.com/maps-platform/" target="_blank">+</a></li>
+              <li><strong>Facebook</strong> <a href="https://developers.facebook.com/docs/" target="_blank">+</a></li>
+              <li><strong>YouTube</strong> <a href="https://developers.google.com/youtube/" target="_blank">+</a></li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h2>Web apis javascript muito legais :)</h2>
+            <a href="https://www.w3.org/TR/?tag=webapi" target="_blank">W3C</a><br>
+            <a href="https://www.w3.org/TR/?tag=webapi" target="_blank">MDN</a>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h2>Navigator online e offline</h2>
+            <div id="isOnline">
+              <span>Status online</span>
+              <h1 class="text-emoji fadeIn">😀</h1>
+            </div>
+            <div>
+                <pre>
+        window.addEventListener('offline', function(e) { console.log('offline'); });
+        window.addEventListener('online', function(e) { console.log('online'); });
+                </pre>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h2>GamePad</h2>
+            <div id="gamePad" style="display:none;">
+              <a href="https://html5gamepad.com/">html gamepad tester</a>
+
+              <div id="ball" class="fadeIn"></div>
+            </div>
+            <div>
+                <pre>
+        window.addEventListener("gamepadconnected", function(e) { 
+          console.log(e.gamepad);
+
+          let gamepads = navigator.getGamepads();
+          console.log('gamepads: ',gamepads);//lista de controles
+        });
+                </pre>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50">
+            <h2>Orientation</h2>
+            <div id="logoOrientation">
+              <img src="../static/images/genkiDama/logoPhp.png" alt="Logo php">
+            </div>
+            <div>
+                <pre>
+        window.addEventListener('deviceorientation', e => {
+          let tiltLR = e.gamma;
+          let tiltFB = e.beta;
+          console.log('Gamma:', e.gamma);
+          console.log('Beta:', e.beta);
+          console.log('Alpha:', e.alpha);
+        });
+                </pre>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        
+        <section class="bg-apple aligncenter">
+          <h2 class="text-emoji zoomIn">😎</h2>
+          <h3><strong>Obrigado !</strong></h2>
+        </section>
+
+      </article>
+    </main>
+    <!--main-->
+
+    <!-- Required -->
+    <script src="../static/js/webslides.js"></script>
+
+    <script>
+      window.ws = new WebSlides();
+
+
+        // Online e Offline
+        let isOnlineSpan = document.querySelector('#isOnline span');
+        let isOnlineH = document.querySelector('#isOnline h1');
+        window.addEventListener('offline', function(e) { 
+          isOnlineSpan.innerHTML = 'Status offline';
+          isOnlineH.innerHTML = "😥";
+        });
+        window.addEventListener('online', function(e) { 
+          isOnlineSpan.innerHTML = 'Status online';
+          isOnlineH.innerHTML = "😀";
+        });
+
+
+        //GAMEPAD 
+        var ball = document.getElementById("ball");
+        var start;
+        var a = 0;
+        var b = 0;
+
+        var rAF = window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.requestAnimationFrame;
+
+        var rAFStop = window.mozCancelRequestAnimationFrame ||
+          window.webkitCancelRequestAnimationFrame ||
+          window.cancelRequestAnimationFrame;
+
+        window.addEventListener("gamepadconnected", function(e) {
+          var gp = navigator.getGamepads()[0];
+          gameLoop();
+
+          console.log(e.gamepad);
+          document.querySelector('#gamePad').style.display = 'block';
+
+          window.addEventListener('click', () => {
+            gp.vibrationActuator.playEffect("dual-rumble", {
+              startDelay: 0,
+              duration: 1000,
+              weakMagnitude: 1.0,
+              strongMagnitude: 1.0
+            });
+          });
+
+        });
+
+        window.addEventListener("gamepaddisconnected", function(e) {
+          rAFStop(start);
+
+          console.log("Controle desconectado");
+          document.querySelector('#gamePad').style.display = 'none';
+        });
+
+        if(navigator.webkitGetGamepads) {
+          var interval = setInterval(webkitGP, 500);
+        }
+
+        function webkitGP() {
+          var gp = navigator.webkitGetGamepads()[0];
+          if(gp) {
+            gameLoop();
+            clearInterval(interval);
+          }
+        }
+
+        function gameLoop() {
+          if(navigator.webkitGetGamepads) {
+            var gp = navigator.webkitGetGamepads()[0];
+            console.log('gp.buttons: ',gp.buttons);
+
+            if(gp.buttons[12] == 1) {
+              b--;
+            } else if(gp.buttons[15] == 1) {
+              a++;
+            } else if(gp.buttons[13] == 1) {
+              b++;
+            } else if(gp.buttons[14] == 1) {
+              a--;
+            }
+          } else { 
+            var gp = navigator.getGamepads()[0];
+
+            if(gp.buttons[12].value > 0 || gp.buttons[12].pressed == true) {
+              b--;
+            } else if(gp.buttons[15].value > 0 || gp.buttons[15].pressed == true) {
+              a++;
+            } else if(gp.buttons[13].value > 0 || gp.buttons[13].pressed == true) {
+              b++;
+            } else if(gp.buttons[14].value > 0 || gp.buttons[14].pressed == true) {
+              a--;
+            }else if(gp.buttons[0].value > 0 || gp.buttons[0].pressed == true) {
+              ball.innerHTML = 'X';
+            }else if(gp.buttons[1].value > 0 || gp.buttons[1].pressed == true) {
+              ball.innerHTML = '⚪';
+            }else if(gp.buttons[2].value > 0 || gp.buttons[2].pressed == true) {
+              ball.innerHTML = '⬜';
+            }else if(gp.buttons[3].value > 0 || gp.buttons[3].pressed == true) {
+              ball.innerHTML = '🔺';
+            }
+          }
+
+          ball.style.left = a*2 + "px";
+          ball.style.top = b*2 + "px";
+
+          var start = rAF(gameLoop);
+        };
+
+        //Logo orientation
+        window.addEventListener('deviceorientation', e => {
+          let tiltLR = e.gamma;
+          let tiltFB = e.beta;
+          console.log('Gamma:', e.gamma);
+          console.log('Beta:', e.beta);
+          console.log('Alpha:', e.alpha);
+          document.querySelector('#logoOrientation').style.transform = `rotate(${tiltLR}deg) rotate3d(1, 0, 0, ${tiltFB * -1}deg) `;
+        });
+
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="../static/js/svg-icons.js"></script>
+
+  </body>
+</html>
